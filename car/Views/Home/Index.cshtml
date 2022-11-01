@@ -1,0 +1,34 @@
+﻿@using car.Models
+@using car.ViewModels.Home
+@model HomeVM
+
+
+<h1>Home Index</h1>
+
+<p>car Name:@Model.CarName.Name</p>
+
+<p>car model: @Model.CarModel.Model</p>
+
+<h1>Car Names</h1>
+
+@if (Model.Cars.Count > 0 && Model.Cars != null)
+{
+
+
+
+    @foreach (CarName name in Model.Cars)
+    {
+
+
+          <p>
+
+              <a asp-controller="home" asp-action="details" asp-route-Id="@name.Id">@name.Name</a>
+
+          </p>
+    }
+}
+
+
+
+
+

@@ -1,0 +1,25 @@
+﻿@model CarName
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<p> Car Id: @Model.Id</p>
+<p>Car Name: @Model.Name</p>
+
+@if (Model.carModels != null && Model.carModels.Count > 0)
+{
+
+
+@foreach (CarModel carModel in Model.carModels)
+{
+
+
+    <p>
+
+        <a asp-controller="home" asp-action="ModelDetail">Model: @carModel.Model Color:@carModel.Color FuelType:@carModel.FuelType </a>
+
+    </p>
+}
+}
